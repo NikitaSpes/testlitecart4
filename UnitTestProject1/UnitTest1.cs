@@ -77,7 +77,7 @@ namespace TestClick
 
                     if (s.Length == 0)
                     {
-                        throw new ArgumentException("пустой заголовок");
+                        throw new ArgumentException("пустой загаловок");
                     }
                 }
             }

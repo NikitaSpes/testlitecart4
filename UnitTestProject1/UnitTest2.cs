@@ -56,10 +56,10 @@ namespace TestClick
             // goods.Click();
             int i;
 
-            List<IWebElement> popular = Browser.FindElements(By.CssSelector("#box-most-popular > div > ul > li")).ToList();
+            List<IWebElement> popular = Browser.FindElements(By.CssSelector(".listing-wrapper > li")).ToList();
             for (i = 0; i < popular.Count; i++)
             {
-                IWebElement num1 = Browser.FindElements(By.CssSelector("#box-most-popular > div > ul > li"))[i];
+                IWebElement num1 = Browser.FindElements(By.CssSelector(".listing-wrapper > li"))[i];
                 int q0 = num1.FindElements(By.CssSelector("a.link > div.image-wrapper > div")).Count;
 
                 if (AreElementsPresent(num1, By.CssSelector("a.link > div.image-wrapper > div")) == true)
@@ -74,45 +74,7 @@ namespace TestClick
                     throw new ArgumentException("Нет елемента");
                 }
             }
-
-                List<IWebElement> campaigns = Browser.FindElements(By.CssSelector("#box-campaigns > div > ul > li")).ToList();
-                for (i = 0; i < campaigns.Count; i++)
-                {
-                    IWebElement num2 = Browser.FindElements(By.CssSelector("#box-campaigns > div > ul > li"))[i];
-                    int q1 = num2.FindElements(By.CssSelector("a.link > div.image-wrapper > div")).Count;
-
-                    if (AreElementsPresent(num2, By.CssSelector("a.link > div.image-wrapper > div")) == true)
-                    {
-                        if (num2.FindElements(By.CssSelector("a.link > div.image-wrapper > div")).Count > 1)
-                        {
-                            throw new ArgumentException("больше одного элемента");
-                        }
-                    }
-                    else
-                    {
-                        throw new ArgumentException("Нет елемента");
-                    }
-                }
-
-                    List<IWebElement> products = Browser.FindElements(By.CssSelector("#box-latest-products > div > ul > li")).ToList();
-                    for (i = 0; i < products.Count; i++)
-                    {
-                        IWebElement num3 = Browser.FindElements(By.CssSelector("#box-latest-products > div > ul > li"))[i];
-                        int q2 = num3.FindElements(By.CssSelector("a.link > div.image-wrapper > div")).Count;
-
-                        if (AreElementsPresent(num3, By.CssSelector("a.link > div.image-wrapper > div")) == true)
-                        {
-                            if (num3.FindElements(By.CssSelector("a.link > div.image-wrapper > div")).Count > 1)
-                            {
-                                throw new ArgumentException("больше одного элемента");
-                            }
-                        }
-                        else
-                        {
-                            throw new ArgumentException("Нет елемента");
-                        }                       
-
-                    }
+                              
 
                 
 
