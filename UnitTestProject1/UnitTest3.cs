@@ -138,7 +138,7 @@ namespace TestClick
                     {
                         IWebElement num2 = Browser.FindElements(By.CssSelector("#table-zones > tbody > tr:not(.header)"))[j];
                         IWebElement sss = num2.FindElement(By.CssSelector("td:nth-child(3)"));
-                        m = sss.GetAttribute("textContent");
+                      //  m = sss.GetAttribute("textContent");
 
                         nn[j] = sss.GetAttribute("textContent");
                         key2++;
@@ -189,7 +189,8 @@ namespace TestClick
                 {
                     IWebElement Zones_ss = Browser.FindElements(By.CssSelector("#table-zones > tbody > tr:not(.header)"))[j];
                     IWebElement eee = Zones_ss.FindElement(By.CssSelector("td:nth-child(3) > select > option[selected=selected]"));
-                    m = eee.GetAttribute("textContent");                  
+                    //m = eee.GetAttribute("textContent");
+                    sss[j] = eee.GetAttribute("textContent");
                     key3++;
 
                     if (key3 > 1)
@@ -208,7 +209,39 @@ namespace TestClick
                 Browser.Close();
                 Browser.SwitchTo().Window(Browser.WindowHandles[0]);
 
+
+
+
+
             }
+
+
+
+
+            /*if (AreElementsPresent(num1, By.CssSelector("a.link > div.image-wrapper > div")) == true)
+             {
+                 if (num1.FindElements(By.CssSelector("a.link > div.image-wrapper > div")).Count > 1)
+                 {
+                     throw new ArgumentException("больше одного элемента");
+                 }
+             }
+             else
+             {
+                 throw new ArgumentException("Нет елемента");
+             }*/
+
+
+                /*  IWebElement ttt = Browser.FindElement(By.CssSelector("#content > form > table > tbody > tr:nth-child(2) > td:nth-child(5) > a"));
+                  string s = ttt.GetAttribute("textContent");
+                  IWebElement iii = Browser.FindElement(By.CssSelector("#content > form > table > tbody > tr:nth-child(3) > td:nth-child(5) > a"));
+                  string d = iii.GetAttribute("textContent");
+                  int p = String.Compare(s, d);
+
+                  if (p > 0)
+                  {
+                      throw new ArgumentException("Страны не по алфавиту");
+                  }*/
+
 
         }
 
